@@ -1,4 +1,4 @@
 package club.banyuan.project.service.impl;
 
-public class TeacherService {
+public class StudentService {
 }

@@ -1,4 +1,4 @@
 package club.banyuan.project.dao;
 
-public interface TeacherDao {
+public interface StudentDao {
 }

@@ -1,5 +1,4 @@
 package club.banyuan.project.pojo;
 
-public class Teacher {
-
+public class Admin {
 }

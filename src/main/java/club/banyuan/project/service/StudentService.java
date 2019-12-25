@@ -1,4 +1,4 @@
 package club.banyuan.project.service;
 
-public interface TeacherService {
+public interface StudentService {
 }
