@@ -8,7 +8,7 @@ public interface AdminDao {
 
     //注册
 
-    void set();
+    void setAdmin();
 
     //增加考试学员
 
