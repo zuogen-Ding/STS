@@ -13,7 +13,7 @@ public interface StudentDao {
 
     void update();
 
-    //考试
+    //考试，调用试题里的选题方法
 
     void test();
 
