@@ -12,6 +12,10 @@ public interface StudentService {
     //查询成绩
     int getScore(Student stu);
 
+    //注册
+
+    void update();
+
     //考试
     Question exam();
 }
