@@ -7,7 +7,7 @@ public interface StudentService {
 
     //修改密码
 
-    void modifyPwd();
+    void modifyPwd(String stuName,String newPwd);
 
     //查询成绩
     int getScore(Student stu);

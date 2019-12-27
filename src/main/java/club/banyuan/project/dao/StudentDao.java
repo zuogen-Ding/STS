@@ -13,5 +13,9 @@ public interface StudentDao {
 
     void test();
 
+   //通过名查信息,返回
+
+     boolean modifyPwd(String stuName,String newStuPwd);
+
 
 }

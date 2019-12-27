@@ -8,7 +8,7 @@ public class StudentServiceImpl implements StudentService {
 
     //修改密码
     @Override
-    public void modifyPwd() {
+    public void modifyPwd(String stuName,String newPwd) {
 
     }
 
