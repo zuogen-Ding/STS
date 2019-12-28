@@ -3,6 +3,9 @@ package club.banyuan.project.service;
 import club.banyuan.project.pojo.Question;
 import club.banyuan.project.pojo.Student;
 
+import java.io.File;
+import java.util.Set;
+
 public interface StudentService {
 
     //修改密码
@@ -17,5 +20,5 @@ public interface StudentService {
     void update();
 
     //考试
-    Question exam();
+    File exam(Set<String> set);
 }

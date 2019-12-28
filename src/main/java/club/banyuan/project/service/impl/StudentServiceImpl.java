@@ -4,6 +4,9 @@ import club.banyuan.project.pojo.Question;
 import club.banyuan.project.pojo.Student;
 import club.banyuan.project.service.StudentService;
 
+import java.io.File;
+import java.util.Set;
+
 public class StudentServiceImpl implements StudentService {
 
     //修改密码
@@ -23,7 +26,8 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Question exam() {
-        return null;
+    public File exam(Set<String> set) {
+        File file=null;
+        return file;
     }
 }
