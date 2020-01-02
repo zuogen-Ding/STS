@@ -7,8 +7,6 @@ public class Student {
     private String stuName;
     //密码
     private String stuPassword;
-    //专业
-    private String major;
     //成绩
     private int python;
     private int java;
@@ -45,13 +43,7 @@ public class Student {
         this.stuPassword = stuPassword;
     }
 
-    public String getMajor() {
-        return major;
-    }
 
-    public void setMajor(String major) {
-        this.major = major;
-    }
 
     public int getPython() {
         return python;
@@ -99,7 +91,6 @@ public class Student {
                 "stuNum=" + stuNum +
                 ", stuName='" + stuName + '\'' +
                 ", stuPassword='" + stuPassword + '\'' +
-                ", major='" + major + '\'' +
                 ", python=" + python +
                 ", java=" + java +
                 ", database=" + database +

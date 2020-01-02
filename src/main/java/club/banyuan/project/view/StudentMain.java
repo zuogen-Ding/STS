@@ -63,11 +63,6 @@ import java.awt.*;
             jTextField1.setDisabledTextColor(new java.awt.Color(255, 255, 255));
             jTextField1.setFocusable(false);
             jTextField1.setRequestFocusEnabled(false);
-            jTextField1.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jTextField1ActionPerformed(evt);
-                }
-            });
 
 
             jButton2.setText("修改密码");
@@ -89,11 +84,6 @@ import java.awt.*;
             jTextField2.setText("欢迎：");
             jTextField2.setBorder(null);
             jTextField2.setFocusable(false);
-            jTextField2.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jTextField2ActionPerformed(evt);
-                }
-            });
 
 
 
@@ -102,21 +92,11 @@ import java.awt.*;
             jTextField3.setBackground(new java.awt.Color(214, 217, 223));
             jTextField3.setText("");
             jTextField3.setBorder(new BasicBorders.FieldBorder(new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223)));
-            jTextField3.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jTextField3ActionPerformed(evt);
-                }
-            });
             jTextField4.setBackground(new java.awt.Color(214, 217, 223));
             jTextField4.setBorder(new BasicBorders.FieldBorder(new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223)));
             jTextField4.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
             jTextField4.setText("考试类型");
             jTextField4.setFocusable(false);
-            jTextField4.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jTextField4ActionPerformed(evt);
-                }
-            });
 
             jButton4.setText("确定");
 
@@ -136,43 +116,25 @@ import java.awt.*;
             jTextField6.setBorder(new BasicBorders.FieldBorder(new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223)));
             jTextField6.setBackground(new java.awt.Color(214, 217, 223));
             jTextField6.setFocusable(false);
-            jTextField6.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jTextField6ActionPerformed(evt);
-                }
-            });
             jTextField7.setBackground(new java.awt.Color(214, 217, 223));
             jTextField7.setBorder(new BasicBorders.FieldBorder(new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223)));
 
             jTextField7.setText("Database考试");
             jTextField7.setFocusable(false);
-            jTextField7.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jTextField7ActionPerformed(evt);
-                }
-            });
             jTextField8.setBackground(new java.awt.Color(214, 217, 223));
             jTextField8.setBorder(new BasicBorders.FieldBorder(new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223)));
 
             jTextField8.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
             jTextField8.setText("考试时长");
             jTextField8.setFocusable(false);
-            jTextField8.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jTextField8ActionPerformed(evt);
-                }
-            });
+
             jTextField9.setBackground(new java.awt.Color(214, 217, 223));
             jTextField9.setBorder(new BasicBorders.FieldBorder(new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223)));
 
             jTextField9.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
             jTextField9.setText("总分");
             jTextField9.setFocusable(false);
-            jTextField9.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jTextField9ActionPerformed(evt);
-                }
-            });
+
             jTextField10.setBackground(new java.awt.Color(214, 217, 223));
             jTextField10.setBorder(new BasicBorders.FieldBorder(new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223)));
 
@@ -183,32 +145,17 @@ import java.awt.*;
 
             jTextField12.setText("两小时");
             jTextField12.setFocusable(false);
-            jTextField12.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jTextField12ActionPerformed(evt);
-                }
-            });
             jTextField16.setBackground(new java.awt.Color(214, 217, 223));
             jTextField16.setBorder(new BasicBorders.FieldBorder(new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223)));
 
             jTextField16.setText("两小时");
             jTextField16.setFocusable(false);
-            jTextField16.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jTextField16ActionPerformed(evt);
-                }
-            });
             jTextField11.setBackground(new java.awt.Color(214, 217, 223));
             jTextField11.setBorder(new BasicBorders.FieldBorder(new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223)));
 
             jTextField11.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
             jTextField11.setText("请选择");
             jTextField11.setFocusable(false);
-            jTextField11.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jTextField11ActionPerformed(evt);
-                }
-            });
             jTextField13.setBackground(new java.awt.Color(214, 217, 223));
             jTextField13.setBorder(new BasicBorders.FieldBorder(new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223),new Color(214, 217, 223)));
 
@@ -352,74 +299,35 @@ import java.awt.*;
             pack();
         }// </editor-fold>
 
-        //
-        private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
-            // TODO add your handling code here:
-        }
-
+        //查询成绩
         private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-            // TODO add your handling code here:
+
         }
 
+        //修改密码
         private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-            // TODO add your handling code here:
         }
 
-        private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {
-            // TODO add your handling code here:
-        }
 
-        private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {
-            // TODO add your handling code here:
-        }
 
-        private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {
-            // TODO add your handling code here:
-        }
-
+        //确定
         private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
             // TODO add your handling code here:
         }
 
-        private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {
-            // TODO add your handling code here:
-        }
-
-        private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {
-            // TODO add your handling code here:
-        }
-
-        private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {
-            // TODO add your handling code here:
-        }
-
-        private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {
-            // TODO add your handling code here:
-        }
-
-        private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {
-            // TODO add your handling code here:
-        }
-
-        private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {
-            // TODO add your handling code here:
-        }
-
+        //选择Java考试
         private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {
             // TODO add your handling code here:
         }
-
+        //选择python考试
         private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {
             // TODO add your handling code here:
         }
-
+        //选择Database考试
         private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {
             // TODO add your handling code here:
         }
 
-        private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {
-            // TODO add your handling code here:
-        }
 
         /**
          * @param args the command line arguments

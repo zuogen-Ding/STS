@@ -3,16 +3,15 @@ package club.banyuan.project.dao;
 import club.banyuan.project.pojo.Student;
 
 public interface AdminDao {
-    //退出
-    void  close();
+
 
     //注册
 
-    void setAdmin();
+    void setAdmin(String admName, String admPassword);
 
     //增加考试学员
 
-    void addStu(Student student);
+    void addStu(int stuNum, String stuName);
 
     //删除考生,学号
 
@@ -20,7 +19,7 @@ public interface AdminDao {
 
     //修改考生信息，学号
 
-    void  updateStu(int stuNum);
+    void  updateStu(int  stuNum,String stuName);
 
     //查询考生，学号
 

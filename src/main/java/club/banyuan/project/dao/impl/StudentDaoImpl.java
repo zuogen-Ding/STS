@@ -1,7 +1,6 @@
 package club.banyuan.project.dao.impl;
 
 import club.banyuan.project.dao.StudentDao;
-import club.banyuan.project.pojo.SocketReceive;
 import club.banyuan.project.util.DruidUtil;
 
 import java.sql.PreparedStatement;
