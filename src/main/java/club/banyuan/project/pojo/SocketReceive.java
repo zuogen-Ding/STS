@@ -1,70 +1,59 @@
 package club.banyuan.project.pojo;
 
+import club.banyuan.project.dao.StudentDao;
+import club.banyuan.project.dao.impl.StudentDaoImpl;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class SocketReceive extends Thread {
-    static File file = null;
-    static BufferedInputStream inputStream = null;
-    static BufferedOutputStream outputStream=null;
-    ServerSocket serverSocket = null;
-
-    {
-        file = new File("question.txt");
-        if (!file.exists()) {
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-    }
+    static ServerSocket serverSocket = null;
+    static OutputStream outputStream = null;
+    static ObjectInputStream objectInputStream = null;
 
     //单例
 
     public static volatile SocketReceive socketReceive;
-    private SocketReceive(){}
-    public static SocketReceive getSocketReceive(){
-        if(socketReceive==null){
-            synchronized (SocketReceive.class){
-                if(socketReceive==null){
-                    socketReceive=new SocketReceive();
+
+    private SocketReceive() {
+    }
+
+    public static SocketReceive getSocketReceive() {
+        if (socketReceive == null) {
+            synchronized (SocketReceive.class) {
+                if (socketReceive == null) {
+                    socketReceive = new SocketReceive();
                 }
 
             }
         }
         return socketReceive;
-      }
-
-    @Override
-    public void run() {
-        receiveMes();
     }
 
-    public synchronized void receiveMes() {
-        while (true) {
 
-            try {
-                serverSocket = new ServerSocket(1111);
+    static synchronized void receiveMes() {
+        try {
+            serverSocket = new ServerSocket(1234);
 
+            while (true) {
                 Socket s = serverSocket.accept();
-                inputStream = new BufferedInputStream(s.getInputStream());
-                byte[] by = new byte[1000000000];
-                int d;
-                outputStream = new BufferedOutputStream(new FileOutputStream(file,true));
-                while ((d = inputStream.read(by)) != -1) {
-                    outputStream.write(by, 0, d);
-                    outputStream.flush();
-                }
+                objectInputStream = new ObjectInputStream(s.getInputStream());
+                Student student = (Student) objectInputStream.readObject();
+                String string1 = student.getStuName();
+                String string2 = student.getStuPassword();
+                String string = StudentDaoImpl.getSocketReceive().commitInfo(string1);
+                outputStream = s.getOutputStream();
+                String str="失败";
+                if (string.equals(string2)) str="成功";
+                outputStream.write(str.getBytes());
+                outputStream.flush();
 
-            } catch (IOException e) {
-                e.printStackTrace();
             }
-
-
-
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
         }
     }
 }
+
+

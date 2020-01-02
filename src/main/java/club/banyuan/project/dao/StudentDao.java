@@ -5,17 +5,19 @@ public interface StudentDao {
 
     //注册
 
-    void setStu();
+    void setStu(String stuName,String stuPwd);
+
+
+    //登陆
+
+    String commitInfo(String stuName);
 
 
 
-    //考试，调用试题里的选题方法
-
-    void test();
 
    //通过名查信息,返回
 
-     boolean modifyPwd(String stuName,String newStuPwd);
+      boolean modifyPwd(String stuName,String newStuPwd);
 
 
 }
