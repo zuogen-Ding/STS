@@ -9,7 +9,7 @@ import java.util.Properties;
 public class DruidUtil {
     public  static Connection getCon() throws Exception {
         Properties  properties=new Properties();
-        properties.load(new FileInputStream("druid.properties"));
+        properties.load(new FileInputStream("/Users/edz/Desktop/project/src/resources/druid.properties"));
         return DruidDataSourceFactory.createDataSource(properties).getConnection();
     }
 

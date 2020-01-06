@@ -1,37 +1,67 @@
 package club.banyuan.project.dao.impl;
 
 import club.banyuan.project.dao.QuestionDao;
+import club.banyuan.project.pojo.Question;
 import club.banyuan.project.util.DruidUtil;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class QuestionDaoImpl implements QuestionDao {
     static PreparedStatement preparedStatement=null;
     static ResultSet resultSet=null;
-    static Set<String> set=new HashSet<String>();
+    static Set<Question> set=new HashSet<>();
+    static  List<Question> list = new ArrayList<>();
+    static int count=0;
+
+
+    public static volatile QuestionDaoImpl questionDaoImpl;
+    private QuestionDaoImpl(){}
+    public static QuestionDaoImpl getQuestionDaoImpl(){
+        if(questionDaoImpl ==null){
+            synchronized (StudentDaoImpl.class){
+                if(questionDaoImpl ==null){
+                    questionDaoImpl =new QuestionDaoImpl();
+                }
+
+            }
+        }
+        return questionDaoImpl;
+    }
 
     @Override
-    public Set selQues(String queName) {
-        //从数据库里选时就完成乱选
-        String string="select *from QueNum where QueNum_name =? and q_id=?";
+    public List<Question> selQues(String queName) {
+        count++;
+        String string="select * from QueNum where QueNum_name =?";
         try {
             preparedStatement= DruidUtil.getCon().prepareStatement(string);
             preparedStatement.setString(1,queName);
-            preparedStatement.setInt(2,(int)(Math.random()*10)+1);
             resultSet=preparedStatement.executeQuery();
 
-            //
-            if(resultSet.next()&&set.size()<11){
-                set.add(resultSet.getString(3)+"\nA."+resultSet.getString(4)+"\nB."+resultSet.getString(5)+"\nC."+
-                        resultSet.getString(6)+"\nD."+resultSet.getString(7)+"\n答案"+resultSet.getString(8)+"\n");
+
+            while (resultSet.next()){
+                Question   question=new Question();
+                question.setQueTitle(resultSet.getString(3));
+                question.setOptionA("\nA."+resultSet.getString(4));
+                question.setOptionB("\nB."+resultSet.getString(5));
+                question.setOptionC("\nC."+resultSet.getString(6));
+                question.setOptionD("\nD."+resultSet.getString(7));
+                question.setQueAnswer("\n"+resultSet.getString(8));
+
+                set.add(question);
+            }
+            Object[] objects =set.toArray();
+            for (Object o :objects) {
+                Question question1=(Question)o;
+                list.add(question1);
+
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return set;
+
+        return list;
     }
 }

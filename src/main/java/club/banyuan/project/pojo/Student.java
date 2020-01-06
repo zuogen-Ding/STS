@@ -1,6 +1,8 @@
 package club.banyuan.project.pojo;
 
-public class Student {
+import java.io.*;
+
+public class Student implements Serializable {
     //学号
     private int stuNum;
     //姓名
@@ -8,13 +10,25 @@ public class Student {
     //密码
     private String stuPassword;
     //成绩
-    private int python;
-    private int java;
-    private int database;
+    private int python=0;
+    private int java=0;
+    private int database=0;
     //总分
     private int stuTotalScore;
     //平均分
     private double stuAvgScore;
+
+    public Student(String stuName, String stuPassword) {
+        this.stuName = stuName;
+        this.stuPassword = stuPassword;
+    }
+
+    public Student(int stuNum, String stuName) {
+        this.stuNum = stuNum;
+        this.stuName = stuName;
+    }
+
+
 
     public Student() {
     }
@@ -98,4 +112,5 @@ public class Student {
                 ", stuAvgScore=" + stuAvgScore +
                 '}';
     }
+
 }

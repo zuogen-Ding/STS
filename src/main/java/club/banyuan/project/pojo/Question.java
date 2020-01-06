@@ -1,6 +1,9 @@
 package club.banyuan.project.pojo;
 
-public class Question {
+import java.io.Serializable;
+import java.util.Objects;
+
+public class Question implements Serializable {
     private int queNum;
     private String queName;
     private String queTitle;
@@ -76,15 +79,32 @@ public class Question {
 
     @Override
     public String toString() {
-        return "Question{" +
-                "queNum=" + queNum +
-                ", queName='" + queName + '\'' +
-                ", queTitle='" + queTitle + '\'' +
-                ", optionA='" + optionA + '\'' +
-                ", optionB='" + optionB + '\'' +
-                ", optionC='" + optionC + '\'' +
-                ", optionD='" + optionD + '\'' +
-                ", queAnswer='" + queAnswer + '\'' +
-                '}';
+        return
+                 queTitle +
+                 optionA +
+                 optionB +
+               optionC +
+                optionD
+                ;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Question question = (Question) o;
+        return queNum == question.queNum &&
+                Objects.equals(queName, question.queName) &&
+                Objects.equals(queTitle, question.queTitle) &&
+                Objects.equals(optionA, question.optionA) &&
+                Objects.equals(optionB, question.optionB) &&
+                Objects.equals(optionC, question.optionC) &&
+                Objects.equals(optionD, question.optionD) &&
+                Objects.equals(queAnswer, question.queAnswer);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(queNum, queName, queTitle, optionA, optionB, optionC, optionD, queAnswer);
     }
 }

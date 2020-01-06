@@ -1,12 +1,22 @@
 package club.banyuan.project.view;
 
-public class StuGetScore extends javax.swing.JFrame {
+import club.banyuan.project.pojo.Student;
+import club.banyuan.project.util.PojoUtil;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public  class StuGetScore extends javax.swing.JFrame {
+        static StuGetScore stuGetScore;
+
 
         /**
          * Creates new form StuRegister
          */
         public StuGetScore() {
             initComponents();
+            setLocationRelativeTo(null);
         }
 
         /**
@@ -17,7 +27,7 @@ public class StuGetScore extends javax.swing.JFrame {
         @SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated Code">
         private void initComponents() {
-
+            this.setTitle("学生");
             jLabel1 = new javax.swing.JLabel();
             jLabel2 = new javax.swing.JLabel();
             jLabel3 = new javax.swing.JLabel();
@@ -52,23 +62,25 @@ public class StuGetScore extends javax.swing.JFrame {
             jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
             jLabel6.setText("Databases");
 
-            jLabel7.setText("分数1");
+            jLabel7.setText(String.valueOf(PojoUtil.getStudent().getPython()));
 
-            jLabel8.setText("分数2");
+            jLabel8.setText(String.valueOf(PojoUtil.getStudent().getJava()));
 
-            jLabel9.setText("分数3");
+            jLabel9.setText(String.valueOf(PojoUtil.getStudent().getDatabase()));
 
             jButton1.setText("确定");
-            jButton1.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton1ActionPerformed(evt);
+            jButton1.addActionListener(new ActionListener() {
+
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    dispose();
+                    StudentMain.startUI();
                 }
             });
 
             jLabel10.setFont(new java.awt.Font("Lucida Grande", 1, 12)); // NOI18N
             jLabel10.setText("您好");
 
-            jLabel12.setText("用户名");
 
             javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
             getContentPane().setLayout(layout);
@@ -137,49 +149,27 @@ public class StuGetScore extends javax.swing.JFrame {
             pack();
         }// </editor-fold>
 
-        private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-            // TODO add your handling code here:
-        }
 
-        /**
-         * @param args the command line arguments
-         */
-        public static void main(String args[]) {
-            /* Set the Nimbus look and feel */
-            //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-            /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-             * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-             */
-            try {
-                for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                    if ("Nimbus".equals(info.getName())) {
-                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                        break;
+    public static void startUI() {
+            EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    if (stuGetScore==null){
+                        synchronized (Login.class) {
+                            if (stuGetScore == null) {
+                                stuGetScore = new StuGetScore();
+                                stuGetScore.setVisible(true);
+                            }
+                        }
+                    }else {
+                        stuGetScore.setVisible(true);
                     }
                 }
-            } catch (ClassNotFoundException ex) {
-                java.util.logging.Logger.getLogger(StuGetScore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            } catch (InstantiationException ex) {
-                java.util.logging.Logger.getLogger(StuGetScore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            } catch (IllegalAccessException ex) {
-                java.util.logging.Logger.getLogger(StuGetScore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                java.util.logging.Logger.getLogger(StuGetScore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            }
-            //</editor-fold>
-            //</editor-fold>
-            //</editor-fold>
-            //</editor-fold>
-
-            /* Create and display the form */
-            java.awt.EventQueue.invokeLater(new Runnable() {
-                public void run() {
-                    new StuGetScore().setVisible(true);
-                }
             });
+
         }
 
-        // Variables declaration - do not modify
+
+    // Variables declaration - do not modify
         private javax.swing.JButton jButton1;
         private javax.swing.JLabel jLabel1;
         private javax.swing.JLabel jLabel10;

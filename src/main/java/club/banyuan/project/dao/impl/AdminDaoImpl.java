@@ -15,7 +15,7 @@ public class AdminDaoImpl implements AdminDao{
 
     public static volatile AdminDaoImpl AdminDaoImpl;
     private AdminDaoImpl(){}
-    public static AdminDaoImpl getSocketReceive(){
+    public static AdminDaoImpl getAdminDaoImpl(){
         if(AdminDaoImpl ==null){
             synchronized (StudentDaoImpl.class){
                 if(AdminDaoImpl ==null){
@@ -25,6 +25,23 @@ public class AdminDaoImpl implements AdminDao{
             }
         }
         return AdminDaoImpl;
+    }
+
+    @Override
+    public String admLogin(String stuName) {
+        string="select service_pwd from student_service where service_name=?";
+        String str=null;
+        try {
+            preparedStatement=DruidUtil.getCon().prepareStatement(string);
+            preparedStatement.setString(1,stuName);
+            resultSet=preparedStatement.executeQuery();
+            if(resultSet.next()){
+                str=resultSet.getString(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return str;
     }
 
     @Override
@@ -72,7 +89,7 @@ public class AdminDaoImpl implements AdminDao{
         try {
             preparedStatement= DruidUtil.getCon().prepareStatement(string);
             preparedStatement.setString(1,stuName);
-            preparedStatement.setInt(1,stuNum);
+            preparedStatement.setInt(2,stuNum);
             preparedStatement.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -82,7 +99,7 @@ public class AdminDaoImpl implements AdminDao{
     @Override
     public Student selStu(int stuNum) {
         string="select * from student where s_num=?";
-        Student student=null;
+        Student student=new Student();
         try {
             preparedStatement=DruidUtil.getCon().prepareStatement(string);
             preparedStatement.setInt(1,stuNum);
@@ -92,7 +109,7 @@ public class AdminDaoImpl implements AdminDao{
              student.setStuName(resultSet.getString(3));
              student.setJava(resultSet.getInt(5));
              student.setDatabase(resultSet.getInt(6));
-             student.setPython(resultSet.getInt(7));
+             student.setPython(resultSet.getInt(9));
          }
         } catch (Exception e) {
             e.printStackTrace();

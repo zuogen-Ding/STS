@@ -1,8 +1,19 @@
 package club.banyuan.project.pojo;
 
-public class Admin {
+import java.io.Serializable;
+
+public class Admin implements Serializable {
     private String admName;
     private String admPassword;
+    private int flag;
+
+    public int getFlag() {
+        return flag;
+    }
+
+    public void setFlag(int flag) {
+        this.flag = flag;
+    }
 
     public Admin(String admName, String admPassword) {
         this.admName = admName;

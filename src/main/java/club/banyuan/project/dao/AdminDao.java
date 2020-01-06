@@ -3,7 +3,8 @@ package club.banyuan.project.dao;
 import club.banyuan.project.pojo.Student;
 
 public interface AdminDao {
-
+    //登陆
+    String admLogin(String adminName);
 
     //注册
 
